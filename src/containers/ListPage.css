@@ -1,0 +1,48 @@
+.ListPage {
+  padding: 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ListPage > p:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ListPage > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ListPage > div:first-child > * {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.ListPage ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.ListPage ul li {
+  border: 1px solid #ccc;
+  min-width: 6rem;
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ListPage li img {
+  margin: 0.5rem;
+  max-width: 5rem;
+  max-height: 5rem;
+  background: #f99;
+  text-decoration: line-through;
+}
