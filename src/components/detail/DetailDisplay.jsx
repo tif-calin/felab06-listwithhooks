@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Article.css';
 
-const Article = props => {
-  return <div className={styles.Article}>
+const DetailDisplay = props => {
+  return <div className="DetailDisplay">
     <span>{props.character.name}</span>
     <span>|| {props.character.affiliation}</span>
     <img src={props.character.photoUrl} />
@@ -12,8 +11,8 @@ const Article = props => {
   </div>;
 };
 
-Article.propTypes = {
+DetailDisplay.propTypes = {
   character: PropTypes.object.isRequired
 };
 
-export default Article;
+export default DetailDisplay;
