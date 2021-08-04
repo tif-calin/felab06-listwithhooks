@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import ItemDetail from '../components/list/ItemDetail';
+import propTypes from 'prop-types';
+import DetailDisplay from '../components/detail/DetailDisplay';
 import { getCharById } from '../services/apiAvatar.js';
 
 const DetailPage = props => {
@@ -10,7 +11,7 @@ const DetailPage = props => {
     setLoading(true);
     getCharById(props.match.params.id)
       .then(setCharacter)
-      .then(setLoading(false))
+      .finally(setLoading(false))
     ;
 
     return () => setCharacter([]);
@@ -19,9 +20,13 @@ const DetailPage = props => {
   return <div className="DetailPage">
     {loading 
       ? <span>loading</span> 
-      : <ItemDetail character={character}/>
+      : <DetailDisplay character={character}/>
     }
   </div>;
+};
+
+DetailPage.propTypes = {
+  match: propTypes.object.isRequired
 };
 
 export default DetailPage;
