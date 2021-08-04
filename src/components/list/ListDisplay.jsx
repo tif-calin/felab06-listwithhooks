@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ItemDetail from './ItemDetail';
+import ListItem from './ListItem';
 
-const ArticleList = props => {
-  return <ul className="ArticleList">
+const ListDisplay = props => {
+  return <ul className="ListDisplay">
     {props.characters.map(
-      char => <ItemDetail character={char} key={char.id} />
+      char => <ListItem character={char} key={char._id}/>
     )}
   </ul>;
 };
 
-ArticleList.propTypes = {
+ListDisplay.propTypes = {
   characters: PropTypes.array.isRequired
 };
 
-export default ArticleList;
+export default ListDisplay;
