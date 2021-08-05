@@ -1,0 +1,22 @@
+.DetailDisplay {
+  display: flex;
+  flex-direction: column;
+  padding: 3vh 3vw;
+}
+
+.DetailDisplay > * {
+  margin: 0.5rem;
+  padding: 0;
+  font-weight: 700;
+}
+
+.DetailDisplay > * span {
+  margin-left: 0.25rem;
+  font-weight: 400;
+}
+
+.DetailDisplay img {
+  width: auto;
+  align-self: center;
+  max-height: 20rem;
+}
