@@ -4,17 +4,16 @@ import DetailDisplay from '../components/detail/DetailDisplay';
 import { getCharById } from '../services/apiAvatar.js';
 
 const DetailPage = props => {
-  const [character, setCharacter] = React.useState([]);
+  const [character, setCharacter] = React.useState({});
   const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
     setLoading(true);
+
     getCharById(props.match.params.id)
       .then(setCharacter)
-      .finally(setLoading(false))
+      .finally(() => setLoading(false))
     ;
-
-    return () => setCharacter([]);
   }, []);
 
   return <div className="DetailPage">
